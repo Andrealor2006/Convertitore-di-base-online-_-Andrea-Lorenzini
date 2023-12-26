@@ -1,0 +1,153 @@
+
+<!-- saved from url=(0079)https://andrealor2006.github.io/Convertitore-di-base-online-_-Andrea-Lorenzini/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Convertitore di base online | Andrea Lorenzini</title>
+  	<style type="text/css">
+		body {
+			min-width: 50em;
+			font-family: Arial, Helvetica, sans-serif;
+			background-color:#00ffbf;
+		}
+		h1 {text-align: center; font-size: 13pt}
+		h2 {text-align: center; font-size: 21pt}
+		.centrato {text-align: center}
+		#visore {
+			font-size: 125%;
+			margin-top: 2em;
+			word-wrap: break-word;
+		}
+	</style>
+  <script type="text/javascript" src="./Convertitore di base online _ Andrea Lorenzini_files/bignumber.min.js.download"></script>
+  <script type="text/javascript" src="./Convertitore di base online _ Andrea Lorenzini_files/libconvertitore.min.js.download"></script>
+	<script type="text/javascript">
+		function esegui() {
+  			try {
+				numero = document.getElementById("input").value;
+				bi = document.getElementById("base_iniz");
+				if (bi.selectedIndex != -1)
+					baseIniziale = bi.options[bi.selectedIndex].text
+				bf = document.getElementById("base_fin");
+				if (bf.selectedIndex != -1)
+					baseFinale = bf.options[bf.selectedIndex].text
+					
+    			nd = scomponiSequenza(numero, baseIniziale);
+    			p = estraiParti(new BigNumber(nd.num), new BigNumber(nd.den), baseFinale);
+    
+    			INFO(HTML(nd.segno, p.int, p.ap, p.pe, baseFinale))
+    
+  			} catch(msg) {
+    			ERR(msg)
+  			} 
+		}
+		
+		function azzeraVisore() {
+			v = document.getElementById("visore")
+			while (v.firstChild != null)
+				v.removeChild(v.firstChild)
+				
+			v.appendChild(document.createTextNode(""))
+		}
+		
+		function eseguiAsync() {
+			window.setTimeout('INFO("Conversione in corso...")', 1);
+			window.setTimeout('esegui()', 30);
+		}
+	</script>
+  <style>[_nghost-ng-c4214649903]{font-family:Open Sans,sans-serif;color:#121212}</style><style>[_nghost-ng-c4214649903]{font-family:Open Sans,sans-serif;color:#121212}</style></head>
+  <body>
+ 
+  <h1>Creato da Andrea Lorenzini</h1>
+  <h2>Convertitore di base</h2>
+
+  <p class="centrato">
+  Per convertire un numero periodico, digitare il periodo all'interno di parentesi quadre: ad esempio, per inserire il numero 2.5<span style="text-decoration:overline">35</span>, 
+  digitare <span style="font-family: monospace">2.5[35]</span>.</p> 
+  <div class="centrato" style="border: solid thin rgb(4, 0, 255); padding: 1em 1em 2em 1em">
+  	<div><div style="float: left; width: 12em; text-align: right;">Numero da convertire:</div>
+		 <div style="float:right; width: 10em; text-align: left;">in base 
+		 <select id="base_iniz" style="width: 5em" name="base_iniz" tabindex="2">
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10" selected="selected">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+				<option value="31">31</option>
+				<option value="32">32</option>
+				<option value="33">33</option>
+				<option value="34">34</option>
+				<option value="35">35</option>
+				<option value="36">36</option>
+		</select></div>
+		<div style="margin: 0 11em 0 13em"><input type="text" maxlength="20000" id="input" style="width: 100%" onkeypress="azzeraVisore();" tabindex="1"></div>
+		
+	</div>
+	<div style="margin: 1em">
+		Conversione in base: 
+		<select id="base_fin" style="width: 5em" tabindex="3">
+				<option value="2" selected="selected">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+				<option value="31">31</option>
+				<option value="32">32</option>
+				<option value="33">33</option>
+				<option value="34">34</option>
+				<option value="35">35</option>
+				<option value="36">36</option>
+		</select>
+		<input style="margin-left: 30px;" type="button" onclick="eseguiAsync(); return false" value="Converti" tabindex="4">
+	</div>
+	<div id="visore"></div>
+  </div>
+
+  
+
+<app-content ng-version="16.0.0"><template shadowrootmode="open"><!----><app-similar-tools _nghost-ng-c4214649903=""><!----><!----><!----></app-similar-tools><!----><!----><style>[_nghost-ng-c4214649903]{font-family:Open Sans,sans-serif;color:#121212}</style></template></app-content></body><app-content></app-content></html>
